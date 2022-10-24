@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:iscflutterplugin/iscflutterplugin.dart';
+part of isc;
+
+
 
 ///海康isc播放器widget,
 ///可单独使用,直接将预览地址传入即可
