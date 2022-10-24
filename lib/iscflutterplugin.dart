@@ -1,8 +1,20 @@
-import 'dart:async';
-import 'dart:io';
+library isc;
 
+import 'dart:convert';
+import 'dart:io';
+import 'dart:async';
+
+import 'package:crypto/crypto.dart';
+import 'package:dio/adapter.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+
+part 'isc_http.dart';
+part 'isc_player.dart';
+
 
 ///闲置状态
 const IDLE = 0;

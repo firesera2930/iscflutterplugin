@@ -1,0 +1,6 @@
+module iscflutterplugin {
+  umbrella header "iscflutterplugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

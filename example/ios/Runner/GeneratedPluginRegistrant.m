@@ -18,10 +18,10 @@
 @import path_provider_ios;
 #endif
 
-#if __has_include(<permission_handler/PermissionHandlerPlugin.h>)
-#import <permission_handler/PermissionHandlerPlugin.h>
+#if __has_include(<permission_handler_apple/PermissionHandlerPlugin.h>)
+#import <permission_handler_apple/PermissionHandlerPlugin.h>
 #else
-@import permission_handler;
+@import permission_handler_apple;
 #endif
 
 @implementation GeneratedPluginRegistrant

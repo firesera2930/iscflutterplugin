@@ -1,10 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
+part of isc;
 
-import 'package:crypto/crypto.dart';
-import 'package:dio/adapter.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 
 ///海康isc平台,认证配置,如果需要自行和海康的isc平台交互,
 ///比如获取预览地址,云台控制等等,就需要配置该项

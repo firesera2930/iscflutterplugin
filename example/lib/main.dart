@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iscflutterplugin/isc_http.dart';
+import 'package:iscflutterplugin/iscflutterplugin.dart';
 import 'package:iscflutterplugin_example/video_play_back.dart';
 import 'package:iscflutterplugin_example/video_real_play.dart';
 
@@ -18,9 +18,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     //初始化配置
-    // ArtemisConfig.host = "xxx";
-    // ArtemisConfig.appKey = "xxx";
-    // ArtemisConfig.appSecret = "xxx";
+    ArtemisConfig.host = "222.77.181.13:35443";
+    ArtemisConfig.appKey = "29352046";
+    ArtemisConfig.appSecret = "vVJtyMhN4O8PxSE6U7I7";
 
     return Scaffold(
       appBar: AppBar(

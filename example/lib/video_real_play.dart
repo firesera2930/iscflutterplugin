@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:iscflutterplugin/isc_http.dart';
-import 'package:iscflutterplugin/isc_player.dart';
 import 'package:iscflutterplugin/iscflutterplugin.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -20,7 +18,7 @@ class _VideoRealPlayPageState extends State<VideoRealPlayPage> {
   late Iscflutterplugin _controller;
   late String _previewUrl;
 
-  var cameraCode = 'xxx';
+  var cameraCode = '93e888ed7e104174b55842045d804a21';
 
   @override
   Widget build(BuildContext context) {

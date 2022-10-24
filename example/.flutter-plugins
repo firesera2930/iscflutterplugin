@@ -1,9 +1,12 @@
 # This is a generated file; do not edit or check into version control.
-iscflutterplugin=/Users/zoujichao/Downloads/iscflutterplugin-2.1.0/
+iscflutterplugin=/Users/zoujichao/WorkSpace/iscflutterplugin/
 path_provider=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider-2.0.11/
 path_provider_android=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider_android-2.0.20/
 path_provider_ios=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider_ios-2.0.11/
 path_provider_linux=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.1.7/
 path_provider_macos=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider_macos-2.0.6/
 path_provider_windows=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.1.3/
-permission_handler=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-7.2.0/
+permission_handler=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-10.2.0/
+permission_handler_android=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_android-10.2.0/
+permission_handler_apple=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_apple-9.0.7/
+permission_handler_windows=/Users/zoujichao/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_windows-0.1.2/
