@@ -118,6 +118,10 @@
 
         result([self capturePicture]);
 
+    }if ([[call method] isEqualToString:@"screenshot"]) {          // 抓图
+
+        result([self screenshot]);
+
     } if ([[call method] isEqualToString:@"startRecord"]) {          // 开启本地录像
         [self startRecord:call result:result];
 
@@ -272,7 +276,7 @@
             message = @"无保存图片到相册的权限，不能抓图";
 
         } else {
-            NSDictionary * dic = [self capture];
+            NSDictionary * dic = [self screenshot];
             code = dic[@"code"];
             message = dic[@"msg"];
         }
@@ -284,7 +288,7 @@
 }
 
 /// 抓拍
-- (NSDictionary *)capture {
+- (NSDictionary *)screenshot {
     if (!_isPlaying) {
         return @{
             @"code" : @"0",
@@ -292,11 +296,10 @@
         };
     }
     NSData * imgData = [self.player screenshoot];
-    UIImage * img = [[UIImage alloc] initWithData:imgData];
-    UIImageWriteToSavedPhotosAlbum(img, self, nil, nil);    // 保存图片到相册
+    //UIImage * img = [[UIImage alloc] initWithData:imgData];
+    //UIImageWriteToSavedPhotosAlbum(img, self, nil, nil);    // 保存图片到相册
     return @{
-        @"code" : @"1",
-        @"msg" : @"抓图成功，并保存到系统相册"
+        @"ret" : imgData,
     };
     // 生成图片路径
 //    NSString *documentDirectorie = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
