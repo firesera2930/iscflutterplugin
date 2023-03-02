@@ -18,9 +18,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     //初始化配置
-    ArtemisConfig.host = "222.77.181.13:35443";
-    ArtemisConfig.appKey = "29352046";
-    ArtemisConfig.appSecret = "vVJtyMhN4O8PxSE6U7I7";
+    ArtemisConfig.host = "59.56.92.194:35443";
+    ArtemisConfig.appKey = "26018569";
+    ArtemisConfig.appSecret = "DmWO77Jatr7NonkUfVrB";
 
     return Scaffold(
       appBar: AppBar(

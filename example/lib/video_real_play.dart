@@ -17,8 +17,9 @@ class VideoRealPlayPage extends StatefulWidget {
 class _VideoRealPlayPageState extends State<VideoRealPlayPage> {
   late Iscflutterplugin _controller;
   late String _previewUrl;
+  Uint8List? bytes;
 
-  var cameraCode = '93e888ed7e104174b55842045d804a21';
+  var cameraCode = '08fdd6cb4c044cd0879cca6be696e28f';
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +83,12 @@ class _VideoRealPlayPageState extends State<VideoRealPlayPage> {
                       child: ElevatedButton(
                           child: Text("获取版本号"), onPressed: _getVersion),
                     ),
+                    Container(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          child: Text("获取图片"), onPressed: _getScreenshot),
+                    ),
+                    bytes != null ? Image.memory(bytes!) : Container()
                   ],
                 ),
               ),
@@ -208,5 +215,12 @@ class _VideoRealPlayPageState extends State<VideoRealPlayPage> {
 
   void _getVersion() async {
     print('当前SDK版本为:${await _controller.getVersion()}');
+  }
+
+  void _getScreenshot() async {
+    Map map = await _controller.screenshot();
+    bytes = map['ret'];
+    print('当前SDK版本为:$bytes');
+    setState(() {});
   }
 }

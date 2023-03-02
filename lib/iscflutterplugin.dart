@@ -178,6 +178,13 @@ class Iscflutterplugin {
     });
   }
 
+  ///预览/回放 抓图获取图片
+  ///必须预览/回放成功后才可调用
+  ///bitmapPath 图片本地存储路径
+  Future<dynamic> screenshot() async {
+    return await _channel.invokeMethod('screenshot');
+  }
+
   ///开启本地录像
   ///必须预览/回放成功后才可调用
   ///mediaFilePath 视频本地存储路径

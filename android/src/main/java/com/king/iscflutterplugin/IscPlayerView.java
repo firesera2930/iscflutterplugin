@@ -17,6 +17,7 @@ import com.hikvision.hatomplayer.PlayCallback.Status;
 import com.hikvision.hatomplayer.PlayCallback;
 import com.hikvision.hatomplayer.PlayConfig;
 import com.hikvision.hatomplayer.core.HeaderParams;
+import com.hikvision.hatomplayer.core.JPEGData;
 import com.hikvision.hatomplayer.core.Quality;
 import com.king.iscflutterplugin.utils.AppGlobalUtils;
 import com.king.iscflutterplugin.utils.ThreadUtils;
@@ -178,6 +179,12 @@ public class IscPlayerView extends TextureView implements PlatformView, MethodCh
             case "capturePicture":
                 Config.mPath = methodCall.argument("path");
                 callResult(result, capturePicture());
+                break;
+
+            //预览/回放 抓图 返回图片
+            case "screenshot":
+                Config.mPath = methodCall.argument("path");
+                callResult(result, screenshot());
                 break;
 
             //开启本地录像
@@ -444,6 +451,20 @@ public class IscPlayerView extends TextureView implements PlatformView, MethodCh
             return true;
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    /**
+     * 预览/回放抓图
+     *
+     * @return
+     */
+    private byte[] screenshot(){
+        try {
+            JPEGData jpegData = mPlayer.screenshot();
+            return jpegData.mJpegBuffer;
+        } catch (Exception e) {
+            return null;
         }
     }
 

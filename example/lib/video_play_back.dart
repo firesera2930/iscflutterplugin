@@ -15,7 +15,7 @@ class VideoPlayBackPage extends StatefulWidget {
 class _VideoPlayBackPageState extends State<VideoPlayBackPage> {
   late Iscflutterplugin _controller;
   late String _previewUrl;
-  var cameraCode = 'xxx';
+  var cameraCode = '08fdd6cb4c044cd0879cca6be696e28f';
 
   void _getOSDTime() async {
     var time = await _controller.getOSDTime();
