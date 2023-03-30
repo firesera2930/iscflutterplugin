@@ -306,6 +306,8 @@
     }else {
         return @{
             @"ret" : imgData,
+            @"code" : @"0",
+            @"msg" : @"抓图成功"
         };
     }
     // 生成图片路径
