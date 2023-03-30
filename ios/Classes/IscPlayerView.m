@@ -298,9 +298,16 @@
     NSData * imgData = [self.player screenshoot];
     //UIImage * img = [[UIImage alloc] initWithData:imgData];
     //UIImageWriteToSavedPhotosAlbum(img, self, nil, nil);    // 保存图片到相册
-    return @{
-        @"ret" : imgData,
-    };
+    if(imgData == nil) {
+        return @{
+            @"code" : @"0",
+            @"msg" : @"抓图失败"
+        };
+    }else {
+        return @{
+            @"ret" : imgData,
+        };
+    }
     // 生成图片路径
 //    NSString *documentDirectorie = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
 //    NSString *filePath = [documentDirectorie stringByAppendingFormat:@"/%.f.jpg", [NSDate date].timeIntervalSince1970];
