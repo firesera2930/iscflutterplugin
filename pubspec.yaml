@@ -1,6 +1,6 @@
 name: iscflutterplugin
 description: A Flutter plugin to play hikvision isc platform. It used hikvision native library, *.so for java and *.a for ios.
-version: 2.1.0
+version: 3.0.0
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
