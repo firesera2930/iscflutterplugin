@@ -1,6 +1,5 @@
 part of isc;
 
-
 ///海康isc平台,认证配置,如果需要自行和海康的isc平台交互,
 ///比如获取预览地址,云台控制等等,就需要配置该项
 class ArtemisConfig {
@@ -119,12 +118,12 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
-        return true;
-      };
+    (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
+      HttpClient client = HttpClient()
+        ..badCertificateCallback = (X509Certificate cert, String host, int port) {
+          return true;
+        };
+      return client;
     };
     dio.options.headers.addAll(headers);
     Response response = await dio.post(url, data: body);
@@ -180,10 +179,8 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+      client.badCertificateCallback = (X509Certificate cert, String host, int port) {
         return true;
       };
     };
@@ -261,10 +258,8 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+      client.badCertificateCallback = (X509Certificate cert, String host, int port) {
         return true;
       };
     };
@@ -314,10 +309,8 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+      client.badCertificateCallback = (X509Certificate cert, String host, int port) {
         return true;
       };
     };
