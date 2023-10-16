@@ -1,20 +1,18 @@
 library isc;
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:async';
 
 import 'package:crypto/crypto.dart';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 part 'isc_http.dart';
 part 'isc_player.dart';
-
 
 ///闲置状态
 const IDLE = 0;
@@ -90,10 +88,10 @@ class Iscflutterplugin {
   ///startTime 开始时间 格式为 yyyy-MMdd'T'HH:mm:ss.SSSZ
   ///stopTime 结束时间 格式为 yyyy-MMdd'T'HH:mm:ss.SSSZ
   Future<dynamic> startPlayback(
-      String liveRtspUrl,
-      String startTime,
-      String stopTime,
-      ) async {
+    String liveRtspUrl,
+    String startTime,
+    String stopTime,
+  ) async {
     //ios设备需要将时间转为时间戳
     // if (defaultTargetPlatform == TargetPlatform.iOS) {
     //   DateTime start = DateTime.parse(startTime);
@@ -128,7 +126,7 @@ class Iscflutterplugin {
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       String time = ret!['ret'];
       if ("-1" != time) {
-        DateTime res = DateTime.fromMillisecondsSinceEpoch(int.parse(time+'000'));
+        DateTime res = DateTime.fromMillisecondsSinceEpoch(int.parse(time + '000'));
         return res;
       }
     } else if (defaultTargetPlatform == TargetPlatform.android) {
