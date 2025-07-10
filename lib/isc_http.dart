@@ -253,6 +253,7 @@ class IscApi {
     body['cameraIndexCode'] = cameraIndexCode;
     body['action'] = action;
     body['command'] = command;
+    body['speed'] = 100;
 
     Dio dio = Dio();
     dio.interceptors.add(LogInterceptor(requestBody: true));
